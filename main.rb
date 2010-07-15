@@ -16,8 +16,8 @@ loop do
 
 			i=0
 
-			puts "SCAN STARTING"
-			puts Time.now.strftime("%H%M%S")
+			puts "Starting a new scan"
+			puts Time.now
 			p = Nmap::Parser.parsescan("nmap", "-sP 192.168.1.1/24")
 			puts
 
@@ -36,21 +36,19 @@ loop do
 			if i == 1
 				puts "home" 
 				c1 = "home"
-				c2 = Time.now.strftime("%H%M%S")
-				c3 = Time.now.strftime("%y%m%d")
+				c2 = Time.now
 				
 					CSV.open('db.csv', 'a') do |writer|		
-									writer << [ c1, c2, c3 ]
+									writer << [ c1, c2]
 					 end
 				 puts 
 							else			
 				puts "out"
 				c1 = "out"
-				c2 = Time.now.strftime("%H%M%S")
-				c3 = Time.now.strftime("%y%m%d")
-				
+				c2 = Time.now
+								
 				CSV.open('db.csv', 'a') do |writer|		
-					writer << [c1, c2, c3]
+					writer << [c1, c2]
 			     end
 				
 				end
