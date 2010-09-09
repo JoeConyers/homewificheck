@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# A simple program that looks for my phone on my home network ever 15 seconds and writes the output to a csv with time and date.
+# A simple program that looks for my phone on my home network every 15 seconds and writes the output to a csv with time and date.
 #
 # 
 
